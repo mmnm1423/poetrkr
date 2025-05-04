@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poe 번역기</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <!-- 왼쪽 패널: 설정 및 콘솔 -->
+            <div class="left-panel">
+                <!-- 설정 패널 -->
+                <div class="settings-panel">
+                    <div class="form-group inline-form">
+                        <label for="bot-name">봇 이름:</label>
+                        <input type="text" id="bot-name" value="Sonnet-3.7-KorTr">
+                    </div>
+                    
+                    <div class="form-group inline-form">
+                        <label for="api-keys-file">API 키 파일:</label>
+                        <input type="file" id="api-keys-file">
+                    </div>
+                    <div id="api-keys-info" class="info-text"></div>
+                    
+                    <div class="form-group inline-form">
+                        <label for="start-key">시작 API 키:</label>
+                        <select id="start-key" disabled>
+                            <option value="">API 키를 선택하세요</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group inline-form">
+                        <label for="text-file">본문 텍스트:</label>
+                        <input type="file" id="text-file">
+                    </div>
+                    <div id="text-info" class="info-text"></div>
+                    
+                    <div class="form-group inline-form">
+                        <label for="max-chars">글자수 제한:</label>
+                        <input type="number" id="max-chars" value="14000" min="100">
+                    </div>
+                    
+                    <button id="submit-btn" class="full-width-btn" disabled>요청하기</button>
+                </div>
+                
+                <!-- 진행 상황 패널 -->
+                <div class="progress-panel">
+                    <div id="progress-list" class="progress-list">
+                        <div class="initial-text">이곳에 진행상황이 표시됩니다.</div>
+                    </div>
+                </div>
+                
+                <!-- 콘솔 패널 -->
+                <div class="console-panel">
+                    <div id="console-output" class="console">
+                        <div class="initial-text">이곳에 상태가 표시됩니다.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 오른쪽 패널: 결과 -->
+            <div class="right-panel">
+                <div class="output-panel">
+                    <div class="output-header">
+                        <button id="copy-btn" class="full-width-btn" disabled>결과 복사</button>
+                    </div>
+                    <div id="output-text" class="output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
